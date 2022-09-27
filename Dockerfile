@@ -1,6 +1,6 @@
-FROM centos7
-RUN  yum update -y $$ yum install httpd -y $$ yum clean all
+FROM alpine
+RUN  apk add apache2 
 EXPOSE 8080
-CMD [“httpd”, “-D”, “FOREGROUND”] 
+CMD ["httpd", "-DFOREGROUND" 
 
 
