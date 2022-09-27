@@ -1,7 +1,6 @@
-FROM ubuntu 
-RUN apt update 
-RUN apt install –y apache2 
-RUN apt install –y apache2-utils 
-RUN apt clean 
+FROM ubi8
+RUN yum update -y $$ yum install httpd $$ yum clean all
+EXPOSE 8080
+CMD [“httpd”, “-D”, “FOREGROUND”]
 EXPOSE 8080
 CMD [“apache2ctl”, “-D”, “FOREGROUND”]
